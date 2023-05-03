@@ -1,0 +1,103 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "ODQS config schema",
+  "description": "This is a JSON meta schema for the ODQS config file",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "projectRoot": {
+      "type": "string"
+    },
+    "validators": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/validator" }
+    },
+    "clientType": {
+      "enum": ["besu", "goquorum"]
+    },
+    "members": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/party" }
+    },
+    "vnetSubnet": {
+      "type": "string",
+      "description": "The subnet of the virtual network"
+    }
+  },
+  "required": ["projectRoot", "validators", "clientType", "members", "vnetSubnet"],
+  "$defs": {
+    "validator": {
+      "type": "object",
+      "required": ["ip", "rpcPort"],
+      "properties": {
+        "ip": {
+          "type": "string",
+          "description": "IP of validator node"
+        },
+        "rpcPort": {
+          "type": "string",
+          "description": "http rpc port of validator node"
+        }
+      }
+    },
+    "tesseraNode": {
+      "type": "object",
+      "required": ["ip", "tesseraPort"],
+      "properties": {
+        "ip": {
+          "type": "string",
+          "description": "IP of tessera node"
+        },
+        "tesseraPort": {
+          "type": "number",
+          "description": "Tessera port"
+        }
+      }
+    },
+    "transactionNode": {
+      "type": "object",
+      "required": ["ip", "rpcPort", "wsPort"],
+      "properties": {
+        "ip": {
+          "type": "string",
+          "description": "IP of tessera node"
+        },
+        "rpcPort": {
+          "type": "number",
+          "description": "HTTP RPC port"
+        },
+        "wsPort": {
+          "type": "number",
+          "description": "HTTP RPC port"
+        }
+      }
+    },
+    "party": {
+      "type": "object",
+      "required": ["partyCode", "appConfigEndpoint", "keyVaultEndpoint"],
+      "properties": {
+        "partyCode": {
+          "type": "string",
+          "description": ""
+        },
+        "appConfigEndpoint": {
+          "type": "string",
+          "description": "Azure App Config endpoint"
+        },
+        "keyVaultEndpoint": {
+          "type": "string",
+          "description": "Azure Key Vault endpoint"
+        },
+        "tesseraNode": {
+          "$ref": "#/$defs/tesseraNode"
+        },
+        "transactionNode": {
+          "$ref": "#/$defs/transactionNode"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
