@@ -11,15 +11,19 @@
       "type": "string"
     },
     "validators": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/validator" }
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/validator"
+      }
     },
     "clientType": {
       "enum": ["besu", "goquorum"]
     },
     "members": {
-      "type": "array",
-      "items": { "$ref": "#/$defs/party" }
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "#/$defs/party"
+      }
     },
     "vnetSubnet": {
       "type": "string",
@@ -76,12 +80,8 @@
     },
     "party": {
       "type": "object",
-      "required": ["partyCode", "appConfigEndpoint", "keyVaultEndpoint"],
+      "required": ["appConfigEndpoint", "keyVaultEndpoint"],
       "properties": {
-        "partyCode": {
-          "type": "string",
-          "description": ""
-        },
         "appConfigEndpoint": {
           "type": "string",
           "description": "Azure App Config endpoint"
@@ -96,7 +96,8 @@
         "transactionNode": {
           "$ref": "#/$defs/transactionNode"
         }
-      }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false
