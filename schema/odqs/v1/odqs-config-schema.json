@@ -34,49 +34,18 @@
   "$defs": {
     "validator": {
       "type": "object",
-      "required": ["ip", "rpcPort"],
+      "required": ["validatorNodeIp", "validatorNodeHttpRpcPort"],
       "properties": {
-        "ip": {
+        "validatorNodeIp": {
           "type": "string",
           "description": "IP of validator node"
         },
-        "rpcPort": {
+        "validatorNodeHttpRpcPort": {
           "type": "string",
           "description": "http rpc port of validator node"
         }
-      }
-    },
-    "tesseraNode": {
-      "type": "object",
-      "required": ["ip", "tesseraPort"],
-      "properties": {
-        "ip": {
-          "type": "string",
-          "description": "IP of tessera node"
-        },
-        "tesseraPort": {
-          "type": "number",
-          "description": "Tessera port"
-        }
-      }
-    },
-    "transactionNode": {
-      "type": "object",
-      "required": ["ip", "rpcPort", "wsPort"],
-      "properties": {
-        "ip": {
-          "type": "string",
-          "description": "IP of tessera node"
-        },
-        "rpcPort": {
-          "type": "number",
-          "description": "HTTP RPC port"
-        },
-        "wsPort": {
-          "type": "number",
-          "description": "HTTP RPC port"
-        }
-      }
+      },
+      "additionalProperties": false
     },
     "party": {
       "type": "object",
@@ -90,11 +59,25 @@
           "type": "string",
           "description": "Azure Key Vault endpoint"
         },
-        "tesseraNode": {
-          "$ref": "#/$defs/tesseraNode"
+        "tesseraNodeIp": {
+          "type": "string",
+          "description": "IP of tessera node"
         },
-        "transactionNode": {
-          "$ref": "#/$defs/transactionNode"
+        "tesseraNodePort": {
+          "type": "number",
+          "description": "Tessera port"
+        },
+        "transactionNodeIp": {
+          "type": "string",
+          "description": "IP of tessera node"
+        },
+        "transactionNodeHttpRpcPort": {
+          "type": "number",
+          "description": "HTTP RPC port"
+        },
+        "transactionNodeWsPort": {
+          "type": "number",
+          "description": "WS RPC port"
         }
       },
       "additionalProperties": false
