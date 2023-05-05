@@ -7,17 +7,11 @@
     "$schema": {
       "type": "string"
     },
-    "projectRoot": {
-      "type": "string"
-    },
     "validators": {
       "type": "object",
       "additionalProperties": {
         "$ref": "#/$defs/validator"
       }
-    },
-    "clientType": {
-      "enum": ["besu", "goquorum"]
     },
     "members": {
       "type": "object",
