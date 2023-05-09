@@ -24,7 +24,7 @@
       "description": "The subnet of the virtual network"
     }
   },
-  "required": ["projectRoot", "validators", "clientType", "members", "vnetSubnet"],
+  "required": ["validators", "members", "vnetSubnet"],
   "$defs": {
     "validator": {
       "type": "object",
