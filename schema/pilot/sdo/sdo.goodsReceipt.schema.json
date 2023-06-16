@@ -1,0 +1,109 @@
+{
+  "$id": "sdo.goodsRecipt.schema.json",
+  "title": "SdoGoodsReciptDataSchema",
+  "description": "Schema for SDO GoodsRecipt Data",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "gr-dtm": {
+      "description": "GoodsReceipt date obj",
+      "type": "object",
+      "properties": {
+        "gr-dtm-dateQualif": {
+          "description": "GoodsReceipt date qualifier",
+          "$comment": "050: GR Document Date",
+          "enum": ["050"]
+        },
+        "gr-dtm-date": {
+          "description": "GoodsReceipt date",
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+
+    "gr-lineitems-ref": {
+      "description": "GoodsReceipt lineitems ref array",
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "description": "GoodsReceipt lineitems ref object",
+        "type": "object",
+        "properties": {
+          "gr-lineitems-ref-idQualf": {
+            "description": "GoodsReceipt lineitems ref id qualifier",
+            "$comment": "OP: Original Purchase Order Number, BV: Purchase Order Line Item, ZP: Plant Code, AS: Advance Shipment Notice",
+            "enum": ["OP", "BV", "ZP", "AS"]
+          },
+          "gr-lineitems-ref-id": {
+            "description": "GoodsReceipt lineitems ref id",
+            "type": "string"
+          }
+        }
+      }
+    },
+
+    "gr-lineitems-product": {
+      "description": "GoodsReceipt lineitems product array",
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "description": "GoodsReceipt lineitems product object",
+        "type": "object",
+        "properties": {
+          "gr-lineitems-product-productQualf": {
+            "description": "GoodsReceipt lineitems product qualifier",
+            "$comment": "VP: Vendor Part Number, BP: Buyer Part Number, ZD: MDM",
+            "enum": ["VP", "BP", "ZD"]
+          },
+          "gr-lineitems-product-value": {
+            "description": "GoodsReceipt lineitems product value",
+            "type": "string"
+          }
+        }
+      }
+    },
+
+    "gr-txnGroup-participants": {
+      "description": "BC Participants Vendor Name",
+      "type": "string"
+    },
+
+    "gr-lineitems-qty": {
+      "description": "GoodsReceipt lineitems quantity obj",
+      "type": "object",
+      "properties": {
+        "gr-lineitems-qty-type": {
+          "description": "GoodsReceipt lineitems quantity type",
+          "enum": ["GR_QTY"]
+        },
+        "gr-lineitems-qty-uom": {
+          "description": "GoodsReceipt lineitems quantity uom",
+          "$comment": "EA: Each",
+          "enum": ["EA"]
+        },
+        "gr-lineitems-qty-value": {
+          "description": "GoodsReceipt lineitems quantity value",
+          "type": "number"
+        }
+      }
+    },
+
+    "gr-grNumber": {
+      "description": "GoodsReceipt number",
+      "$comment": "UID",
+      "type": "string"
+    }
+  },
+  "required": [
+    "gr-dtm",
+    "gr-lineitems-ref",
+    "gr-lineitems-product",
+    "gr-txnGroup-participants",
+    "gr-lineitems-qty",
+    "gr-grNumber"
+  ],
+  "additionalProperties": false
+}
