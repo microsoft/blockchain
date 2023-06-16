@@ -1,0 +1,131 @@
+{
+  "$id": "sdo.shipment.schema.json",
+  "title": "SdoShipmentDataSchema",
+  "description": "Schema for SDO Shipment Data",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "shipments-ref": {
+      "description": "Shipment ref obj",
+      "type": "object",
+      "properties": {
+        "shipments-ref-idQualif": {
+          "description": "Shipment ref id qualifier",
+          "$comment": "CO: Customer Order Number",
+          "enum": ["CO"]
+        },
+        "shipments-ref-id": {
+          "description": "Shipment ref id",
+          "type": "string"
+        }
+      }
+    },
+
+    "shipments-shipmentNumber": {
+      "description": "Shipment number",
+      "$comment": "UID",
+      "type": "string"
+    },
+
+    "shipments-lineitems-line": {
+      "description": "Shipment line number",
+      "type": "string"
+    },
+
+    "shipments-dtm": {
+      "description": "Shipment date obj",
+      "type": "object",
+      "properties": {
+        "shipments-dtm-dateQualif": {
+          "description": "Shipment date qualifier",
+          "$comment": "011: Shipped Date",
+          "enum": ["011"]
+        },
+        "shipments-dtm-date": {
+          "description": "Shipment date",
+          "type": "string",
+          "format": "date"
+        }
+      }
+    },
+
+    "shipments-lineitems-qty": {
+      "description": "Shipment lineitems quantity obj",
+      "type": "object",
+      "properties": {
+        "shipments-lineitems-qty-type": {
+          "description": "Shipment lineitems quantity type",
+          "enum": ["SHIP_QTY"]
+        },
+        "shipments-lineitems-qty-uom": {
+          "description": "Shipment lineitems quantity uom",
+          "$comment": "EA: Each",
+          "enum": ["EA"]
+        },
+        "shipments-lineitems-qty-value": {
+          "description": "Shipment lineitems quantity value",
+          "type": "number"
+        }
+      }
+    },
+
+    "shipments-parties": {
+      "description": "Shipment parties array",
+      "type": "array",
+      "minItems": 3,
+      "items": {
+        "description": "Shipment parties object",
+        "type": "object",
+        "properties": {
+          "shipments-parties-partnerQualif": {
+            "description": "Shipment parties partner qualifier",
+            "$comment": "BT: Bill-To-Party, ST: Ship-To-Party, SF: Ship-From",
+            "enum": ["BT", "ST", "SF"]
+          },
+          "shipments-parties-partnerId": {
+            "description": "Shipment parties partner id",
+            "type": "string"
+          },
+          "shipments-parties-name": {
+            "description": "Shipment parties partner name",
+            "type": "string"
+          }
+        },
+        "required": ["shipments-parties-partnerQualif", "shipments-parties-partnerId"]
+      }
+    },
+
+    "shipments-lineitems-product": {
+      "description": "Shipment lineitems product array",
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "description": "Shipment lineitems product object",
+        "type": "object",
+        "properties": {
+          "shipments-lineitems-product-productQualf": {
+            "description": "Shipment lineitems product qualifier",
+            "$comment": "VP: Manufacturer Part Number, ZD: MDM",
+            "enum": ["VP", "ZD"]
+          },
+          "shipments-lineitems-product-value": {
+            "description": "Shipment lineitems product value",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "shipments-ref",
+    "shipments-shipmentNumber",
+    "shipments-lineitems-line",
+    "shipments-dtm",
+    "shipments-lineitems-qty",
+    "shipments-parties",
+    "shipments-lineitems-product"
+  ],
+  "additionalProperties": false
+}
