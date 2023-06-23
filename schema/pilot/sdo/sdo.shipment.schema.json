@@ -20,7 +20,8 @@
           "description": "Shipment ref id",
           "type": "string"
         }
-      }
+      },
+      "required": ["shipments-ref-idQualif", "shipments-ref-id"]
     },
 
     "shipments-shipmentNumber": {
@@ -48,7 +49,8 @@
           "type": "string",
           "format": "date"
         }
-      }
+      },
+      "required": ["shipments-dtm-dateQualif", "shipments-dtm-date"]
     },
 
     "shipments-lineitems-qty": {
@@ -68,7 +70,12 @@
           "description": "Shipment lineitems quantity value",
           "type": "number"
         }
-      }
+      },
+      "required": [
+        "shipments-lineitems-qty-type",
+        "shipments-lineitems-qty-uom",
+        "shipments-lineitems-qty-value"
+      ]
     },
 
     "shipments-parties": {
@@ -93,7 +100,10 @@
             "type": "string"
           }
         },
-        "required": ["shipments-parties-partnerQualif", "shipments-parties-partnerId"]
+        "required": [
+          "shipments-parties-partnerQualif",
+          "shipments-parties-partnerId"
+        ]
       }
     },
 
@@ -114,7 +124,11 @@
             "description": "Shipment lineitems product value",
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "shipments-lineitems-product-productQualf",
+          "shipments-lineitems-product-value"
+        ]
       }
     }
   },

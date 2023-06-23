@@ -1,7 +1,7 @@
 {
-  "$id": "sdo.goodsRecipt.schema.json",
-  "title": "SdoGoodsReciptDataSchema",
-  "description": "Schema for SDO GoodsRecipt Data",
+  "$id": "sdo.goodsReceipt.schema.json",
+  "title": "SdoGoodsReceiptDataSchema",
+  "description": "Schema for SDO GoodsReceipt Data",
   "type": "object",
   "properties": {
     "$schema": {
@@ -21,7 +21,8 @@
           "type": "string",
           "format": "date"
         }
-      }
+      },
+      "required": ["gr-dtm", "gr-dtm-date"]
     },
 
     "gr-lineitems-ref": {
@@ -41,7 +42,8 @@
             "description": "GoodsReceipt lineitems ref id",
             "type": "string"
           }
-        }
+        },
+        "required": ["gr-lineitems-ref-idQualf", "gr-lineitems-ref-id"]
       }
     },
 
@@ -62,7 +64,11 @@
             "description": "GoodsReceipt lineitems product value",
             "type": "string"
           }
-        }
+        },
+        "required": [
+          "gr-lineitems-product-productQualf",
+          "gr-lineitems-product-value"
+        ]
       }
     },
 
@@ -88,7 +94,12 @@
           "description": "GoodsReceipt lineitems quantity value",
           "type": "number"
         }
-      }
+      },
+      "required": [
+        "gr-lineitems-qty-type",
+        "gr-lineitems-qty-uom",
+        "gr-lineitems-qty-value"
+      ]
     },
 
     "gr-grNumber": {
