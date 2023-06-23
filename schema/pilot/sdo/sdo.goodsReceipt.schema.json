@@ -22,7 +22,7 @@
           "format": "date"
         }
       },
-      "required": ["gr-dtm", "gr-dtm-date"]
+      "required": ["gr-dtm-dateQualif", "gr-dtm-date"]
     },
 
     "gr-lineitems-ref": {
