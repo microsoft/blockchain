@@ -1,0 +1,127 @@
+{
+  "$id": "sdo.rackBuild.schema.json",
+  "title": "SdoRackBuildDataSchema",
+  "description": "Schema for SDO Rack Build Data",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+
+    "rack-id": {
+      "description": "Rack ID",
+      "type": "string"
+    },
+
+    "rack-name": {
+      "description": "Rack Name",
+      "type": "string"
+    },
+
+    "rack-serial": {
+      "description": "Rack Serial Number",
+      "type": "string"
+    },
+
+    "rack-build-dtm": {
+      "description": "Rack Build Date",
+      "type": "object",
+      "properties": {
+        "rack-build-dtm-dateQualif": {
+          "description": "Rack build date qualifier",
+          "$comment": "011: Built Date",
+          "enum": ["011"]
+        },
+        "rack-build-dtm-date": {
+          "description": "Built date",
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "required": ["rack-build-dtm-dateQualif", "rack-build-dtm-date"]
+    },
+
+    "rack-partner": {
+      "description": "Systems Integrator Partner Name",
+      "type": "string"
+    },
+
+    "rack-components": {
+      "description": "Rack Components",
+      "type": "array",
+      "items": {
+        "description": "Rack Component Item",
+        "type": "object",
+        "properties": {
+          "rack-component-type": {
+            "description": "Rack Component Type",
+            "enum": ["Cabinet", "PDU", "Network Assembly", "Coupler", "Rail", "Barrier", "Cable", "Server"]
+          },
+          "rack-component-id": {
+            "description": "Rack Component ID",
+            "type": "string"
+          },
+          "rack-component-name": {
+            "description": "Rack Component Name",
+            "type": "string"
+          },
+          "rack-component-serial": {
+            "description": "Rack Component Serial Number",
+            "type": "string"
+          },
+          "rack-component-manufacturer": {
+            "description": "Rack Component Manufacturer",
+            "type": "string"
+          },
+          "rack-components-items": {
+            "description": "Rack Component Items",
+            "type": "array",
+            "items": {
+              "description": "Rack Component Item",
+              "type": "object",
+              "properties": {
+                "item-id": {
+                  "description": "Item ID",
+                  "type": "string"
+                },
+                "item-name": {
+                  "description": "Item Name",
+                  "type": "string"
+                },
+                "item-serial": {
+                  "description": "Item Serial Number",
+                  "type": "string"
+                },
+                "item-type": {
+                  "description": "Item Type",
+                  "enum": [
+                    "IC Processor",
+                    "NIC",
+                    "Memory Module",
+                    "SSD",
+                    "HDD",
+                    "FPGA Card",
+                    "Chassis",
+                    "Bracket",
+                    "Connector",
+                    "Clip",
+                    "Heat Sink",
+                    "Standoff",
+                    "PCB Assembly",
+                    "Insert",
+                    "Cable",
+                    "Screw",
+                    "M Assembly"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "required": ["rack-component-type", "rack-component-id", "rack-component-serial"]
+      }
+    }
+  },
+  "required": ["rack-id", "rack-serial", "rack-build-dtm", "rack-components"],
+  "additionalProperties": false
+}
