@@ -13,11 +13,6 @@
       "type": "string"
     },
 
-    "rack-name": {
-      "description": "Rack Name",
-      "type": "string"
-    },
-
     "rack-serial": {
       "description": "Rack Serial Number",
       "type": "string"
@@ -68,10 +63,6 @@
           },
           "rack-component-id": {
             "description": "Rack Component ID",
-            "type": "string"
-          },
-          "rack-component-name": {
-            "description": "Rack Component Name",
             "type": "string"
           },
           "rack-component-serial": {
@@ -141,7 +132,6 @@
         "required": [
           "rack-component-type",
           "rack-component-id",
-          "rack-component-name",
           "rack-component-serial",
           "rack-component-manufacturer",
           "rack-components-items"
@@ -151,7 +141,6 @@
   },
   "required": [
     "rack-id",
-    "rack-name",
     "rack-serial",
     "rack-build-dtm",
     "rack-partner",
