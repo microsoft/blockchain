@@ -1,0 +1,12 @@
+{
+    "$schema": "./order.schema.json",
+    "id": "123",
+    "orderDate": "2022-01-01",
+    "sellerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "buyerId": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "productId": "abc",
+    "price": 10,
+    "currency": "USD",
+    "quantity": 1,
+    "requiredDate": "2022-01-10"
+}
