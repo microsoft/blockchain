@@ -1,0 +1,50 @@
+{
+    "$id": "shipment.schema.json",
+    "title": "POC shipment",
+    "description": "Schema for POC shipment data",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "shipDate": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "sellerId": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "buyerId": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "productId": {
+            "type": "string"
+        },
+        "orderId": {
+            "type": "string"
+        },
+        "quantity": {
+            "type": "number"
+        },
+        "requestedDate": {
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": [
+        "id",
+        "shipDate",
+        "sellerId",
+        "buyerId",
+        "productId",
+        "orderId",
+        "quantity",
+        "requestedDate"
+    ],
+    "additionalProperties": false
+}

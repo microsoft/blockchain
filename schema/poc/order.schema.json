@@ -1,0 +1,51 @@
+{
+    "$id": "order.schema.json",
+    "title": "POC order",
+    "description": "Schema for POC order data",
+    "type": "object",
+    "properties": {
+        "$schema": {
+            "type": "string"
+        },
+        "id": {
+            "type": "string"
+        },
+        "orderDate": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "sellerId": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "buyerId": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "productId": {
+            "type": "string"
+        },
+        "price": {
+            "type": "number",
+            "format": "currency"
+        },
+        "quantity": {
+            "type": "number"
+        },
+        "requiredDate": {
+            "type": "string",
+            "format": "date-time"
+        }
+    },
+    "required": [
+        "id",
+        "orderDate",
+        "sellerId",
+        "buyerId",
+        "productId",
+        "currency",
+        "quantity",
+        "requiredDate"
+    ],
+    "additionalProperties": false
+}
