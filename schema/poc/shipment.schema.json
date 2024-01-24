@@ -1,7 +1,7 @@
 {
-    "$id": "order.schema.json",
-    "title": "POC order",
-    "description": "Schema for POC order data",
+    "$id": "shipment.schema.json",
+    "title": "POC shipment",
+    "description": "Schema for POC shipment data",
     "type": "object",
     "properties": {
         "$schema": {
@@ -10,7 +10,7 @@
         "id": {
             "type": "string"
         },
-        "orderDate": {
+        "shipDate": {
             "type": "string",
             "format": "date-time"
         },
@@ -25,27 +25,26 @@
         "productId": {
             "type": "string"
         },
-        "price": {
-            "type": "number",
-            "format": "currency"
+        "orderId": {
+            "type": "string"
         },
         "quantity": {
             "type": "number"
         },
-        "requiredDate": {
+        "requestedDate": {
             "type": "string",
             "format": "date-time"
         }
     },
     "required": [
         "id",
-        "orderDate",
+        "shipDate",
         "sellerId",
         "buyerId",
         "productId",
-        "currency",
+        "orderId",
         "quantity",
-        "requiredDate"
+        "requestedDate"
     ],
     "additionalProperties": false
 }
