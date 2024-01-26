@@ -34,7 +34,7 @@
         "sellerId",
         "buyerId",
         "productId",
-        "currency",
+        "price",
         "quantity",
         "requiredDate"
     ],
