@@ -1,6 +1,5 @@
 {
     "$schema": "../order.schema.json",
-    "id": "OYA_1",
     "orderDate": "2024-03-01T00:00:00.000Z",
     "sellerId": "5e53c7b0-f659-4216-bb6d-6f495fbca49c",
     "buyerId": "08747ef9-3206-4a10-a0cc-28d80189269a",

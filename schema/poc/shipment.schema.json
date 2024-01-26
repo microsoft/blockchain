@@ -7,9 +7,6 @@
         "$schema": {
             "type": "string"
         },
-        "id": {
-            "type": "string"
-        },
         "shipDate": {
             "type": "string"
         },
@@ -33,7 +30,6 @@
         }
     },
     "required": [
-        "id",
         "shipDate",
         "sellerId",
         "buyerId",
