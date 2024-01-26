@@ -11,16 +11,13 @@
             "type": "string"
         },
         "shipDate": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
         },
         "sellerId": {
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
         },
         "buyerId": {
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
         },
         "productId": {
             "type": "string"
@@ -32,8 +29,7 @@
             "type": "number"
         },
         "requestedDate": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
         }
     },
     "required": [

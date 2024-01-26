@@ -11,30 +11,25 @@
             "type": "string"
         },
         "orderDate": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
         },
         "sellerId": {
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
         },
         "buyerId": {
-            "type": "string",
-            "format": "uuid"
+            "type": "string"
         },
         "productId": {
             "type": "string"
         },
         "price": {
-            "type": "number",
-            "format": "currency"
+            "type": "number"
         },
         "quantity": {
             "type": "number"
         },
         "requiredDate": {
-            "type": "string",
-            "format": "date-time"
+            "type": "string"
         }
     },
     "required": [
