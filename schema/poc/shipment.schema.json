@@ -1,4 +1,5 @@
 {
+    "$schema": "http://json-schema.org/draft-07/schema#",
     "$id": "shipment.schema.json",
     "title": "POC shipment",
     "description": "Schema for POC shipment data",
