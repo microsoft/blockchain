@@ -29,7 +29,7 @@
     "compositionByWeight": {
       "type": "number",
       "minimum": 0,
-      "maxiumum": 100
+      "maximum": 100
     },
     "keyMaterialSupplier": {
       "type": "string"
