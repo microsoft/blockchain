@@ -9,32 +9,41 @@
       "type": "string"
     },
     "productId": {
+      "title": "Product ID",
       "type": "string"
     },
     "submissionDate": {
+      "title": "Submission Date",
       "type": "string"
     },
     "sellerId": {
+      "title": "Seller ID",
       "type": "string"
     },
     "buyerId": {
+      "title": "Buyer ID",
       "type": "string"
     },
     "countryOfOrigin": {
+      "title": "Country of Origin",
       "type": "string"
     },
     "conflictFreeDeclaration": {
+      "title": "Conflict Free Declaration",
       "type": "boolean"
     },
     "compositionByWeight": {
+      "title": "Composition by Weight",
       "type": "number",
       "minimum": 0,
       "maximum": 100
     },
     "keyMaterialSupplier": {
+      "title": "Key Material Supplier",
       "type": "string"
     },
     "c02emissions": {
+      "title": "C02 Emissions",
       "type": "number"
     }
   },

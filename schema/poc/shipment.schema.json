@@ -9,24 +9,31 @@
             "type": "string"
         },
         "shipDate": {
+            "title": "Ship ID",
             "type": "string"
         },
         "sellerId": {
+            "title": "Seller ID",
             "type": "string"
         },
         "buyerId": {
+            "title": "Buyer ID",
             "type": "string"
         },
         "productId": {
+            "title": "Product ID",
             "type": "string"
         },
         "orderId": {
+            "title": "Order ID",
             "type": "string"
         },
         "quantity": {
+            "title": "Quantity",
             "type": "number"
         },
         "requestedDate": {
+            "title": "Requested Date",
             "type": "string"
         }
     },
